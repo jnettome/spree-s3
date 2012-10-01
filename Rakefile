@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "spree_s3"
-  gem.homepage = "http://github.com/jnettome/spree_s3"
+  gem.name = "spree-s3"
+  gem.homepage = "http://github.com/jnettome/spree-s3"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Spree extension to configure image uploads in S3"
+  gem.description = "Spree extension to configure image uploads in S3"
   gem.email = "hi@joaonetto.me"
   gem.authors = ["João Netto"]
   # dependencies defined in Gemfile
