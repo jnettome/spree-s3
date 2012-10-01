@@ -12,8 +12,8 @@ end
 require 'rake'
 
 require 'jeweler'
+require './lib/spree_s3/version.rb'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "spree-s3"
   gem.homepage = "http://github.com/jnettome/spree-s3"
   gem.license = "MIT"
@@ -21,26 +21,14 @@ Jeweler::Tasks.new do |gem|
   gem.description = "Spree extension to configure image uploads in S3"
   gem.email = "hi@joaonetto.me"
   gem.authors = ["João Netto"]
-  # dependencies defined in Gemfile
+  gem.version = SpreeS3::Version::STRING
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
+require "rspec/core/rake_task"
+RSpec::Core::RakeTask.new
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
-
-task :default => :test
+task :default => :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
